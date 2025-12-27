@@ -1,0 +1,350 @@
+/* src/components/Loader/Loader.css */
+
+/* ========================================
+   WRAPPER PRINCIPAL
+   ======================================== */
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut var(--transition-slow) ease-out 1.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   LOGO / INITIALES
+   ======================================== */
+
+.loader-logo {
+  width: 100px;
+  height: 100px;
+  background: var(--color-white);
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  border: 4px solid var(--color-primary);
+  position: relative;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.logo-text {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  letter-spacing: 2px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-xl);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(35, 83, 71, 0.4);
+  }
+}
+
+/* ========================================
+   SPINNER ANIMÉ
+   ======================================== */
+
+.loader-spinner {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.spinner-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top-color: var(--color-primary);
+  border-radius: var(--border-radius-full);
+  animation: spin 1.5s linear infinite;
+}
+
+.spinner-ring:nth-child(2) {
+  border-top-color: var(--color-sage);
+  animation-duration: 2s;
+  animation-direction: reverse;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+}
+
+.spinner-ring:nth-child(3) {
+  border-top-color: var(--color-teal);
+  animation-duration: 2.5s;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   TEXTE DE CHARGEMENT
+   ======================================== */
+
+.loader-text {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  animation: fadeInOut 1.5s ease-in-out infinite;
+  margin: 0;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   BARRE DE PROGRESSION
+   ======================================== */
+
+.progress-bar {
+  width: 300px;
+  height: 4px;
+  background: rgba(35, 83, 71, 0.1);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--color-primary) 0%, 
+    var(--color-sage) 50%, 
+    var(--color-primary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--border-radius-full);
+  animation: progress 2s ease-in-out forwards,
+             shimmer 1.5s linear infinite;
+  box-shadow: 0 0 10px rgba(35, 83, 71, 0.5);
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - TABLETTE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .loader-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .logo-text {
+    font-size: var(--font-size-2xl);
+  }
+
+  .loader-spinner {
+    width: 110px;
+    height: 110px;
+  }
+
+  .progress-bar {
+    width: 280px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .loader-container {
+    gap: var(--spacing-lg);
+  }
+
+  .loader-logo {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--color-primary);
+  }
+
+  .logo-text {
+    font-size: var(--font-size-xl);
+    letter-spacing: 1px;
+  }
+
+  .loader-spinner {
+    width: 100px;
+    height: 100px;
+  }
+
+  .spinner-ring {
+    border-width: 3px;
+  }
+
+  .loader-text {
+    font-size: var(--font-size-base);
+  }
+
+  .progress-bar {
+    width: 250px;
+    height: 3px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - PETIT MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .loader-container {
+    gap: var(--spacing-md);
+  }
+
+  .loader-logo {
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--color-primary);
+  }
+
+  .logo-text {
+    font-size: var(--font-size-lg);
+  }
+
+  .loader-spinner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .spinner-ring {
+    border-width: 2px;
+  }
+
+  .loader-text {
+    font-size: var(--font-size-sm);
+  }
+
+  .progress-bar {
+    width: 200px;
+    height: 3px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITÉ
+   ======================================== */
+
+/* Respecter les préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  .loader-wrapper {
+    animation: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .loader-logo,
+  .spinner-ring,
+  .loader-text,
+  .progress-fill {
+    animation: none;
+  }
+
+  .loader-container {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   VARIANTES DE COULEUR (OPTIONNEL)
+   ======================================== */
+
+/* Loader avec fond sombre (si besoin) */
+.loader-wrapper.dark {
+  background: var(--color-darkest);
+}
+
+.loader-wrapper.dark .loader-logo {
+  background: var(--color-background);
+}
+
+.loader-wrapper.dark .loader-text {
+  color: var(--color-lightest);
+}
+
+.loader-wrapper.dark .progress-bar {
+  background: rgba(218, 241, 222, 0.1);
+}

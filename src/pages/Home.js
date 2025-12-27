@@ -4,6 +4,7 @@ import Hero from '../components/Hero/Hero';
 import Button from '../components/Button/Button';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import image from './image.png';
 
 // Import des icônes Lucide React
 import { 
@@ -94,7 +95,7 @@ function Home() {
             <div className="about-image">
               <div className="image-wrapper">
                 <img 
-                  src="https://via.placeholder.com/500x600/235347/DAF1DE?text=Sersif+Abdeljalil" 
+                  src={image}
                   alt="Sersif Abdeljalil" 
                 />
               </div>

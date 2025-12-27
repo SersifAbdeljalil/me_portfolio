@@ -1,0 +1,304 @@
+/* src/components/ContactForm/ContactForm.css */
+
+/* ========================================
+   WRAPPER DU FORMULAIRE
+   ======================================== */
+
+.contact-form-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.contact-form {
+  background: var(--color-white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: var(--border-width-medium) solid rgba(35, 83, 71, 0.1);
+  transition: all var(--transition-base) var(--transition-ease);
+}
+
+.contact-form:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+/* ========================================
+   EN-TÊTE DU FORMULAIRE
+   ======================================== */
+
+.form-header {
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+}
+
+.form-title {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-darkest);
+  margin-bottom: var(--spacing-sm);
+}
+
+.form-description {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================
+   GROUPES DE CHAMPS
+   ======================================== */
+
+.form-group {
+  margin-bottom: var(--spacing-xl);
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-darkest);
+  margin-bottom: var(--spacing-sm);
+}
+
+.form-label svg {
+  color: var(--color-primary);
+}
+
+/* ========================================
+   CHAMPS INPUT & TEXTAREA
+   ======================================== */
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-primary);
+  color: var(--color-darkest);
+  background: var(--color-background);
+  border: var(--border-width-medium) solid rgba(35, 83, 71, 0.2);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-base) var(--transition-ease);
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-teal);
+  opacity: 0.6;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-primary);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(35, 83, 71, 0.1);
+}
+
+.form-input:disabled,
+.form-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-lightest);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
+  line-height: var(--line-height-relaxed);
+}
+
+/* État d'erreur */
+.form-input.error,
+.form-textarea.error {
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* ========================================
+   MESSAGES D'ERREUR
+   ======================================== */
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  color: #EF4444;
+  animation: slideDown var(--transition-base) var(--transition-ease-out);
+}
+
+.error-message svg {
+  flex-shrink: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MESSAGES DE STATUS
+   ======================================== */
+
+.status-message {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-lg);
+  animation: fadeIn var(--transition-base) var(--transition-ease-out);
+}
+
+.status-message svg {
+  flex-shrink: 0;
+}
+
+.status-message.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border: var(--border-width-medium) solid #10B981;
+}
+
+.status-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  border: var(--border-width-medium) solid #EF4444;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   BOUTON SUBMIT
+   ======================================== */
+
+.submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--transition-ease);
+  box-shadow: var(--shadow-md);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--color-teal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-base);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-sage);
+}
+
+/* Animation spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: var(--spacing-xl);
+  }
+
+  .form-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .form-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .form-description {
+    font-size: var(--font-size-sm);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .submit-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: var(--spacing-lg);
+  }
+
+  .form-title {
+    font-size: var(--font-size-lg);
+  }
+}

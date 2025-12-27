@@ -1,4 +1,14 @@
 // src/data/projects.js
+import React from 'react';
+import bibmanageImage from "../pages/image/bibmanage.png";
+import cryptoTradingImage from "../pages/image/Crypto Trading RL.png";
+import smartSignImage from "../pages/image/SmartSign Translation.png";
+import acidProductionImage from "../pages/image/Industrial Process Optimization.png";           
+import scopusChatbotImage from "../pages/image/Scientific Chatbot.png";
+import cvAnalyseImage from "../pages/image/CV Analysis Platform.png";
+import profManagementImage from "../pages/image/Teacher Management System.png";
+import ticketMarketplaceImage from "../pages/image/Ticket Marketplace CAN2025.png";
+import LibraryMan from "../pages/image/Library Management Mobile App.png";
 
 export const projectsData = [
   {
@@ -6,9 +16,9 @@ export const projectsData = [
     title: "Plateforme d'Analyse de CV Intelligente",
     description: "Application web pour analyser les CV et fournir des recommandations d'amélioration basées sur l'IA avec l'API Groq.",
     longDescription: "Développement d'une plateforme en ligne sophistiquée qui utilise l'intelligence artificielle (API Groq) pour analyser automatiquement les CV des utilisateurs. Le système identifie les points forts et faibles, suggère des améliorations de contenu, optimise le format et fournit des recommandations personnalisées pour maximiser les chances de succès professionnel.",
-    image: "https://via.placeholder.com/600x400/235347/DAF1DE?text=CV+Analyse",
+    image: cvAnalyseImage,
     category: "AI",
-    technologies: ["PHP", "Blade", "JavaScript", "CSS", "HTML", "API Groq", "AI"],
+    technologies: ["PHP", "Blade", "react js", "CSS", "HTML", "API Groq", "AI"],
     date: "2024",
     duration: "3 mois",
     team: "Solo",
@@ -45,7 +55,7 @@ export const projectsData = [
     title: "Trading Crypto avec RL - PPO Algorithm",
     description: "Application d'algorithmes de Reinforcement Learning (PPO) pour optimiser les décisions de trading sur Ethereum.",
     longDescription: "Projet de recherche avancé utilisant le Proximal Policy Optimization (PPO) pour développer un agent de trading automatisé sur les données Ethereum. L'objectif est de surpasser la stratégie passive 'buy-and-hold' en prenant des décisions intelligentes d'achat et de vente basées sur l'apprentissage par renforcement.",
-    image: "https://via.placeholder.com/600x400/0B2B26/DAF1DE?text=Crypto+Trading+RL",
+    image: cryptoTradingImage,
     category: "AI",
     technologies: ["Python", "Reinforcement Learning", "PPO", "TensorFlow", "Pandas", "Matplotlib"],
     date: "2024 - En cours",
@@ -84,7 +94,7 @@ export const projectsData = [
     title: "SmartSign - Traduction Langage des Signes",
     description: "Système embarqué utilisant des capteurs flex et IMU pour traduire le langage des signes en texte en temps réel.",
     longDescription: "Application mobile et web intégrant un modèle de Machine Learning pour reconnaître les gestes du langage des signes et les convertir en texte. Le système utilise 5 capteurs flex et un IMU (MPU 6050) pour capturer les mouvements des mains avec précision, permettant aux personnes sourdes et muettes de communiquer plus facilement.",
-    image: "https://via.placeholder.com/600x400/163932/DAF1DE?text=SmartSign",
+    image: smartSignImage,
     category: "IoT",
     technologies: ["Python", "Jupyter Notebook", "Machine Learning", "Arduino", "MPU 6050", "Flex Sensors", "TensorFlow"],
     date: "2024",
@@ -123,7 +133,7 @@ export const projectsData = [
     title: "Optimisation Production Acide Sulfurique - APC",
     description: "Système APC (Advanced Process Control) avec IA pour optimiser la production d'acide sulfurique chez OCP/KOFERT.",
     longDescription: "Projet industriel majeur utilisant des techniques d'Advanced Process Control et d'Intelligence Artificielle pour optimiser le processus de production d'acide sulfurique. Le système analyse en temps réel les paramètres de production, modélise l'unité HRS et implémente des stratégies de contrôle avancées pour maximiser l'efficacité et réduire les coûts.",
-    image: "https://via.placeholder.com/600x400/235347/DAF1DE?text=APC+Acide",
+    image: acidProductionImage,
     category: "Data Science",
     technologies: ["Python", "Machine Learning", "XGBoost", "Plotly", "Pandas", "Process Control", "Big Data"],
     date: "Août 2025 - Octobre 2025",
@@ -163,7 +173,7 @@ export const projectsData = [
     title: "Scopus Chatbot Scientifique",
     description: "Chatbot intelligent utilisant NLP pour interroger la base de données arXiv et fournir des informations sur les publications scientifiques.",
     longDescription: "Agent conversationnel avancé permettant aux chercheurs d'interroger facilement la base de données arXiv en langage naturel. Le système utilise des techniques de NLP, d'indexation sémantique et de gestion de données pour fournir des réponses précises et pertinentes sur les publications scientifiques, les auteurs et les données académiques.",
-    image: "https://via.placeholder.com/600x400/0B2B26/DAF1DE?text=Scopus+Chatbot",
+    image: scopusChatbotImage,
     category: "AI",
     technologies: ["Python", "NLP", "HTML", "arXiv API", "Semantic Indexing", "Flask"],
     date: "2024",
@@ -202,7 +212,7 @@ export const projectsData = [
     title: "Gestion des Professeurs",
     description: "Application web React pour la gestion administrative des professeurs avec import Excel et génération de cartes professionnelles.",
     longDescription: "Système complet de gestion des professeurs permettant à l'administration d'ajouter des enseignants manuellement ou via fichiers Excel. Les professeurs peuvent se connecter, consulter leurs informations personnelles, télécharger leur carte professionnelle et gérer leur profil.",
-    image: "https://via.placeholder.com/600x400/163932/DAF1DE?text=Gestion+Profs",
+    image: profManagementImage,
     category: "Full-Stack",
     technologies: ["React.js", "JavaScript", "Node.js", "Express", "CSS", "HTML"],
     date: "2023",
@@ -241,7 +251,7 @@ export const projectsData = [
     title: "API Gestion Bibliothèque - Prêt de Livres",
     description: "Application mobile React Native et API REST pour la gestion d'une bibliothèque avec système de prêt et retour de livres.",
     longDescription: "Solution complète de gestion de bibliothèque comprenant une application mobile React Native pour les utilisateurs et une API REST Node.js/Express. Les utilisateurs peuvent consulter le catalogue, emprunter et retourner des livres, tandis que les administrateurs gèrent l'inventaire et les membres.",
-    image: "https://via.placeholder.com/600x400/235347/DAF1DE?text=Biblio+App",
+    image: LibraryMan,
     category: "Mobile",
     technologies: ["React Native", "Node.js", "Express", "MongoDB", "CSS", "REST API"],
     date: "Janvier 2024 - Avril 2024",
@@ -281,7 +291,7 @@ export const projectsData = [
     title: "Marketplace Revente Tickets CAN2025",
     description: "Plateforme de revente de tickets pour la Coupe d'Afrique des Nations 2025 avec authentification Google.",
     longDescription: "Application web complète pour la gestion et la revente de tickets de la CAN2025. Le système comprend une interface utilisateur React, un backend Express, une authentification Google OAuth et un panel administrateur pour la gestion des transactions et la modération.",
-    image: "https://via.placeholder.com/600x400/0B2B26/DAF1DE?text=CAN2025+Tickets",
+    image: ticketMarketplaceImage,
     category: "Full-Stack",
     technologies: ["React.js", "Node.js", "Express", "MongoDB", "Google OAuth", "Stripe"],
     date: "2024",
@@ -321,7 +331,7 @@ export const projectsData = [
     title: "Gestion Emploi du Temps & Réservation Salles",
     description: "Système de gestion des emplois du temps pour professeurs et étudiants avec réservation de salles.",
     longDescription: "Plateforme web permettant aux professeurs de consulter leurs emplois du temps, informations de cours et données étudiants. Les administrateurs peuvent gérer l'ensemble du système, créer les plannings, et gérer les réservations de salles. Système complet pour l'organisation académique.",
-    image: "https://via.placeholder.com/600x400/163932/DAF1DE?text=Emploi+Temps",
+    image: bibmanageImage,
     category: "Full-Stack",
     technologies: ["React.js", "Node.js", "Express", "MySQL", "JavaScript", "CSS"],
     date: "2023",

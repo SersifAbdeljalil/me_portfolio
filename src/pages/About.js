@@ -1,8 +1,9 @@
 // src/components/About/About.js
 import React from 'react';
 import './About.css';
+import cv from "../pages/cv_sersif_abdeljalil.pdf";
+import profilePic from "../pages/Me.jpg";
 
-// Import des icônes React (Lucide React)
 import { 
   Code2, 
   Database, 
@@ -158,7 +159,7 @@ function About() {
             <div className="profile-image-wrapper">
               <div className="profile-image-bg"></div>
               <img 
-                src="https://via.placeholder.com/400x400/235347/DAF1DE?text=Sersif+A" 
+                src={profilePic} 
                 alt="Sersif Abdeljalil" 
                 className="profile-image"
               />
@@ -197,7 +198,7 @@ function About() {
 
               <div className="profile-actions">
                 <a 
-                  href="/cv_sersif_abdeljalil.pdf" 
+                  href={cv}
                   download
                   className="btn-primary"
                 >

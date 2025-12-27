@@ -3,49 +3,45 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Import des composants (à créer plus tard)
+// Import des composants principaux
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Loader from './components/Loader/Loader';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+
+// Import des pages
 import Home from './pages/Home';
 import About from './pages/About';
-// import Projects from './pages/Projects';
-// import Skills from './pages/Skills';
-// import Contact from './pages/Contact';
+import Projects from './pages/Projects';
+import Skills from './pages/Skills';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Navbar /> */}
+        {/* Loader au démarrage */}
+        <Loader />
         
+        {/* Navigation */}
+        <Navbar />
+        
+        {/* Contenu principal */}
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/projects" element={<Projects />} /> */}
-            {/* <Route path="/skills" element={<Skills />} /> */}
-            {/* <Route path="/contact" element={<Contact />} /> */}
-            
-            {/* Route temporaire pour tester */}
-            <Route path="/" element={
-              <div style={{ 
-                minHeight: '100vh', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                flexDirection: 'column',
-                gap: '20px',
-                paddingTop: '80px'
-                
-              }}>
-                <h1>Portfolio en construction 🚧</h1>
-                <p>Les composants seront ajoutés progressivement</p>
-              </div>
-            } />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         
-        {/* <Footer /> */}
+        {/* Pied de page */}
+        <Footer />
+        
+        {/* Bouton retour en haut */}
+        <ScrollToTop />
       </div>
     </Router>
   );
