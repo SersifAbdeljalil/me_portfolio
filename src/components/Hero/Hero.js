@@ -5,6 +5,7 @@ import Button from '../Button/Button';
 import './Hero.css';
 import MeImage from "../../pages/Me.jpg";
 import cv from "../../pages/cv_sersif_abdeljalil.pdf";
+
 function Hero() {
   return (
     <section className="hero">
@@ -14,25 +15,25 @@ function Hero() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            Disponible pour stage de fin d'études
+            🎓 Recherche Stage PFE Master - Disponible Immédiatement
           </div>
-
+          
           <h1 className="hero-title">
             Bonjour, je suis
             <span className="hero-name"> Sersif Abdeljalil</span>
           </h1>
-
+          
           <h2 className="hero-subtitle">
             Full-Stack Developer | Software Engineer
           </h2>
-
+          
           <p className="hero-description">
             Étudiant en Master Ingénierie Informatique et Analyse de Données. 
             Passionné par le développement Full-Stack, l'Intelligence Artificielle, 
             l'IoT et les systèmes embarqués. Je transforme vos idées en solutions 
             digitales innovantes et performantes.
           </p>
-
+          
           {/* Boutons d'action */}
           <div className="hero-buttons">
             <Link to="/contact">
@@ -53,6 +54,7 @@ function Hero() {
             </a>
           </div>
         </div>
+        
         {/* Image / Avatar */}
         <div className="hero-image">
           <div className="image-wrapper">
@@ -71,11 +73,9 @@ function Hero() {
             <div className="decoration decoration-2"></div>
             <div className="decoration decoration-3"></div>
           </div>
-
-        
-          </div>
         </div>
-
+      </div>
+      
       {/* Scroll indicator */}
       <div className="scroll-indicator">
         <span className="scroll-text">Scroll</span>

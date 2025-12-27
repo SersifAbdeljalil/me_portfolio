@@ -5,7 +5,8 @@ import Button from '../components/Button/Button';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import image from './image.png';
-
+import acidProductionImage from "./image/Industrial Process Optimization.png";   
+import renvantticket from "./image/Ticket Marketplace CAN2025.png"
 // Import des icônes Lucide React
 import { 
   Code2, 
@@ -205,43 +206,11 @@ function Home() {
           </div>
 
           <div className="projects-grid">
-            {/* Projet IoT Agriculture */}
-            <div className="project-card">
-              <div className="project-image">
-                <img 
-                  src="https://via.placeholder.com/600x400/235347/DAF1DE?text=IoT+Agriculture" 
-                  alt="Système IoT Agriculture de Précision" 
-                />
-                <div className="project-overlay">
-                  <Button variant="secondary">
-                    Voir le projet
-                    <ExternalLink size={16} />
-                  </Button>
-                </div>
-              </div>
-              <div className="project-info">
-                <div className="project-header">
-                  <Cpu size={24} />
-                  <h3 className="project-title">Système IoT Agriculture de Précision</h3>
-                </div>
-                <p className="project-description">
-                  Solution embarquée basée sur ESP32 pour monitoring environnemental 
-                  (température, humidité, pH) avec irrigation automatisée.
-                </p>
-                <div className="project-tags">
-                  <span className="tag">C</span>
-                  <span className="tag">Arduino</span>
-                  <span className="tag">ESP32</span>
-                  <span className="tag">IoT</span>
-                </div>
-              </div>
-            </div>
-
             {/* Projet Chatbot */}
             <div className="project-card">
               <div className="project-image">
                 <img 
-                  src="https://via.placeholder.com/600x400/0B2B26/DAF1DE?text=Chatbot+IA" 
+                  src={renvantticket} 
                   alt="Chatbot Scientifique Intelligent" 
                 />
                 <div className="project-overlay">
@@ -273,7 +242,7 @@ function Home() {
             <div className="project-card">
               <div className="project-image">
                 <img 
-                  src="https://via.placeholder.com/600x400/163932/DAF1DE?text=Revent+Marketplace" 
+                  src={acidProductionImage}
                   alt="Marketplace de Billets" 
                 />
                 <div className="project-overlay">
