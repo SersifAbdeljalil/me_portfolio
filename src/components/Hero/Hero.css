@@ -80,85 +80,202 @@
   gap: var(--spacing-lg);
 }
 
-/* Badge de disponibilité - STYLE URGENT ET IMPORTANT */
+/* ========================================
+   BADGE ULTRA IMPORTANT - MAGNIFIQUE
+   ======================================== */
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-  border: 3px solid #fff;
+  padding: var(--spacing-xl) calc(var(--spacing-xl) * 1.5);
+  background: linear-gradient(135deg, #ff3e00 0%, #ff6b35 25%, #ff8c42 50%, #ff6b35 75%, #ff3e00 100%);
+  background-size: 300% 300%;
+  border: 4px solid #fff;
   border-radius: var(--border-radius-full);
   width: fit-content;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
+  font-size: 1.1rem;
+  font-weight: 900;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4),
-              0 0 0 0 rgba(255, 107, 53, 0.7);
-  animation: slideInLeft 0.8s ease-out, urgentPulse 2s ease-in-out infinite 1s;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 0 30px rgba(255, 62, 0, 0.6),
+    0 0 60px rgba(255, 107, 53, 0.4),
+    0 15px 40px rgba(255, 62, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: 
+    slideInLeft 0.8s ease-out,
+    megaPulse 2s ease-in-out infinite 1s,
+    gradientShift 4s ease infinite;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  z-index: 100;
 }
 
-/* Effet de brillance animé */
+/* Animation de gradient qui bouge */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Effet de brillance super intense */
 .hero-badge::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -2px;
   left: -100%;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 4px);
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.8),
     transparent
   );
-  animation: shine 3s ease-in-out infinite;
+  animation: superShine 2.5s ease-in-out infinite;
+  z-index: 1;
 }
 
-@keyframes shine {
+/* Effet de lueur externe pulsante */
+.hero-badge::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: var(--border-radius-full);
+  background: linear-gradient(135deg, #ff3e00, #ff8c42);
+  opacity: 0.4;
+  filter: blur(20px);
+  z-index: -1;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes superShine {
   0% {
     left: -100%;
   }
-  50%, 100% {
+  20% {
+    left: 100%;
+  }
+  100% {
     left: 100%;
   }
 }
 
-@keyframes urgentPulse {
+@keyframes glowPulse {
   0%, 100% {
+    opacity: 0.4;
     transform: scale(1);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4),
-                0 0 0 0 rgba(255, 107, 53, 0.7);
   }
   50% {
-    transform: scale(1.05);
-    box-shadow: 0 10px 35px rgba(255, 107, 53, 0.6),
-                0 0 0 15px rgba(255, 107, 53, 0);
+    opacity: 0.8;
+    transform: scale(1.1);
   }
 }
 
-.badge-dot {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  border-radius: 50%;
-  animation: urgentBlink 1.5s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+/* Pulsation méga intense */
+@keyframes megaPulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 
+      0 0 30px rgba(255, 62, 0, 0.6),
+      0 0 60px rgba(255, 107, 53, 0.4),
+      0 15px 40px rgba(255, 62, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 
+      0 0 50px rgba(255, 62, 0, 0.9),
+      0 0 100px rgba(255, 107, 53, 0.6),
+      0 20px 60px rgba(255, 62, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      0 0 0 8px rgba(255, 62, 0, 0.3),
+      0 0 0 16px rgba(255, 62, 0, 0.1);
+  }
 }
 
-@keyframes urgentBlink {
+/* Point super lumineux */
+.badge-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: megaBlink 1.2s ease-in-out infinite;
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 1),
+    0 0 25px rgba(255, 255, 255, 0.8),
+    0 0 35px rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 2;
+}
+
+/* Cercles concentriques autour du point */
+.badge-dot::before,
+.badge-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  animation: ripple 2s ease-out infinite;
+}
+
+.badge-dot::after {
+  animation-delay: 1s;
+}
+
+@keyframes ripple {
+  0% {
+    width: 14px;
+    height: 14px;
+    opacity: 1;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
+
+@keyframes megaBlink {
   0%, 100% {
     transform: scale(1);
     opacity: 1;
+    box-shadow: 
+      0 0 15px rgba(255, 255, 255, 1),
+      0 0 25px rgba(255, 255, 255, 0.8);
   }
   50% {
-    transform: scale(1.5);
-    opacity: 0.6;
+    transform: scale(1.6);
+    opacity: 0.7;
+    box-shadow: 
+      0 0 25px rgba(255, 255, 255, 1),
+      0 0 40px rgba(255, 255, 255, 1),
+      0 0 55px rgba(255, 255, 255, 0.8);
   }
+}
+
+/* Effet hover ultra impressionnant */
+.hero-badge:hover {
+  transform: scale(1.12) translateY(-5px) !important;
+  box-shadow: 
+    0 0 60px rgba(255, 62, 0, 1),
+    0 0 120px rgba(255, 107, 53, 0.8),
+    0 25px 70px rgba(255, 62, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 0 0 10px rgba(255, 62, 0, 0.4),
+    0 0 0 20px rgba(255, 62, 0, 0.2);
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
 }
 
 /* Titre */
@@ -544,6 +661,10 @@
   .image-wrapper {
     max-width: 400px;
   }
+  
+  .hero-badge {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -564,8 +685,8 @@
 
   .hero-badge {
     margin: 0 auto;
-    font-size: var(--font-size-sm);
-    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 0.9rem;
+    padding: var(--spacing-lg) var(--spacing-xl);
   }
 
   .hero-description {
@@ -675,7 +796,13 @@
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.7rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+    letter-spacing: 1px;
+  }
+  
+  .badge-dot {
+    width: 10px;
+    height: 10px;
   }
 }
