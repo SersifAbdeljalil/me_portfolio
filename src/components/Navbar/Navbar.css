@@ -1,0 +1,172 @@
+/* src/components/Navbar/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: var(--z-index-fixed);
+  transition: all var(--transition-base) var(--transition-ease);
+  padding: var(--spacing-lg) 0;
+}
+
+.navbar-scrolled {
+  background-color: rgba(5, 31, 32, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md) 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================================
+   LOGO
+   ======================================== */
+
+.navbar-logo {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-secondary);
+  color: var(--color-lightest);
+  transition: color var(--transition-base) var(--transition-ease);
+  z-index: calc(var(--z-index-fixed) + 2);
+}
+
+.navbar-logo:hover {
+  color: var(--color-secondary);
+}
+
+.logo-text {
+  display: inline-block;
+}
+
+/* ========================================
+   MENU
+   ======================================== */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.navbar-item {
+  list-style: none;
+}
+
+.navbar-link {
+  color: var(--color-lightest);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  padding: var(--spacing-sm) 0;
+  transition: color var(--transition-base) var(--transition-ease);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width var(--transition-base) var(--transition-ease);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: var(--color-secondary);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+/* ========================================
+   HAMBURGER MENU (MOBILE)
+   ======================================== */
+
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  z-index: calc(var(--z-index-fixed) + 2);
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-lightest);
+  transition: all var(--transition-base) var(--transition-ease);
+  border-radius: var(--border-radius-sm);
+}
+
+.navbar-hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.navbar-hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--color-darkest);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2xl);
+    transition: right var(--transition-base) var(--transition-ease);
+    box-shadow: var(--shadow-2xl);
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .navbar-link {
+    font-size: var(--font-size-xl);
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-menu {
+    width: 100%;
+  }
+
+  .navbar-logo {
+    font-size: var(--font-size-xl);
+  }
+}
