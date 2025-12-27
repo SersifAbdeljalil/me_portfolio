@@ -25,8 +25,8 @@ function ContactForm() {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [submitMessage, setSubmitMessage] = useState('');
 
-  // URL de votre backend
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  // URL de votre backend - CORRIGÉ pour pointer vers Vercel par défaut
+  const API_URL = process.env.REACT_APP_API_URL || 'https://backend-portfolio-lwrr.vercel.app';
 
   // Gérer les changements dans les champs
   const handleChange = (e) => {
@@ -93,8 +93,8 @@ function ContactForm() {
     setSubmitMessage('');
 
     try {
-      // Appel à votre API backend
-      const response = await fetch(`${API_URL}/api/contact/send`, {
+      // Appel à votre API backend - CORRIGÉ: /api/contact au lieu de /api/contact/send
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ function ContactForm() {
         setStatus('success');
         setSubmitMessage(data.message || 'Message envoyé avec succès ! Je vous répondrai sous 24-48h.');
         
-        // Réinitialiser le formulaire après 3 secondes
+        // Réinitialiser le formulaire après 5 secondes
         setTimeout(() => {
           setFormData({
             name: '',
