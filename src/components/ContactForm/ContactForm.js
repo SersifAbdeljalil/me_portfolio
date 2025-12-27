@@ -25,6 +25,9 @@ function ContactForm() {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [submitMessage, setSubmitMessage] = useState('');
 
+  // URL de votre backend
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
   // Gérer les changements dans les champs
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,6 +66,8 @@ function ContactForm() {
     // Validation du sujet
     if (!formData.subject.trim()) {
       newErrors.subject = 'Le sujet est requis';
+    } else if (formData.subject.trim().length < 3) {
+      newErrors.subject = 'Le sujet doit contenir au moins 3 caractères';
     }
 
     // Validation du message
@@ -85,35 +90,70 @@ function ContactForm() {
     }
 
     setStatus('loading');
+    setSubmitMessage('');
 
     try {
-      // Simuler un envoi (remplacez par votre API)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Appel à votre API backend
+      const response = await fetch(`${API_URL}/api/contact/send`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
 
-      // Succès
-      setStatus('success');
-      setSubmitMessage('Message envoyé avec succès ! Je vous répondrai bientôt.');
-      
-      // Réinitialiser le formulaire après 3 secondes
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setStatus('idle');
-        setSubmitMessage('');
-      }, 3000);
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // Succès
+        setStatus('success');
+        setSubmitMessage(data.message || 'Message envoyé avec succès ! Je vous répondrai sous 24-48h.');
+        
+        // Réinitialiser le formulaire après 3 secondes
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+          setStatus('idle');
+          setSubmitMessage('');
+        }, 5000);
+
+      } else {
+        // Erreur de validation du backend
+        setStatus('error');
+        
+        if (data.errors && Array.isArray(data.errors)) {
+          // Afficher les erreurs de validation
+          const backendErrors = {};
+          data.errors.forEach(err => {
+            if (err.path) {
+              backendErrors[err.path] = err.msg;
+            }
+          });
+          setErrors(backendErrors);
+          setSubmitMessage('Veuillez corriger les erreurs dans le formulaire.');
+        } else {
+          setSubmitMessage(data.message || 'Une erreur est survenue. Veuillez réessayer.');
+        }
+        
+        setTimeout(() => {
+          setStatus('idle');
+          setSubmitMessage('');
+        }, 5000);
+      }
 
     } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
       setStatus('error');
-      setSubmitMessage('Une erreur est survenue. Veuillez réessayer.');
+      setSubmitMessage('Impossible de contacter le serveur. Vérifiez votre connexion et réessayez.');
       
       setTimeout(() => {
         setStatus('idle');
         setSubmitMessage('');
-      }, 3000);
+      }, 5000);
     }
   };
 
