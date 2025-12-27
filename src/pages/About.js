@@ -174,9 +174,7 @@ function About() {
                 <p className="profile-bio">
                   Étudiant en Master Ingénierie Informatique et Analyse de Données, 
                   je recherche un stage de fin d'études pour approfondir mes compétences 
-                  en développement Full-Stack, Intelligence Artificielle et IoT. Expérience 
-                  concrète en optimisation de processus industriels chez OCP Group avec 
-                  résultats mesurables (+15% d'efficacité).
+                  en développement Full-Stack, Intelligence Artificielle et IoT.
                 </p>
 
                 <div className="profile-contact">
