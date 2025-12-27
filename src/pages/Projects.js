@@ -88,24 +88,7 @@ function Projects() {
               IoT et data science. Chaque projet reflète ma passion pour la technologie 
               et l'innovation.
             </p>
-            
-            {/* Statistiques */}
-            <div className="projects-stats">
-              <div className="stat-item">
-                <span className="stat-number">{projectsData.length}</span>
-                <span className="stat-label">Projets</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{categories.length - 1}</span>
-                <span className="stat-label">Catégories</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">
-                  {projectsData.filter(p => p.featured).length}
-                </span>
-                <span className="stat-label">Vedettes</span>
-              </div>
-            </div>
+          
           </div>
         </div>
       </section>

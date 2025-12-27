@@ -79,49 +79,6 @@ function Skills() {
               Un aperçu complet de mes compétences techniques acquises à travers 
               mes projets, mes études et mes expériences professionnelles.
             </p>
-
-            {/* Statistiques globales */}
-            <div className="global-stats">
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <Award size={32} />
-                </div>
-                <div className="stat-info">
-                  <span className="stat-number">{stats.totalSkills}</span>
-                  <span className="stat-label">Compétences</span>
-                </div>
-              </div>
-
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <TrendingUp size={32} />
-                </div>
-                <div className="stat-info">
-                  <span className="stat-number">{stats.averageLevel}%</span>
-                  <span className="stat-label">Maîtrise moyenne</span>
-                </div>
-              </div>
-
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <CheckCircle2 size={32} />
-                </div>
-                <div className="stat-info">
-                  <span className="stat-number">{stats.expertSkills}</span>
-                  <span className="stat-label">Niveau Expert</span>
-                </div>
-              </div>
-
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <Target size={32} />
-                </div>
-                <div className="stat-info">
-                  <span className="stat-number">{stats.totalProjects}</span>
-                  <span className="stat-label">Projets réalisés</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
