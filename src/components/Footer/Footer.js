@@ -37,6 +37,9 @@ function Footer() {
                 <Link to="/skills" className="footer-link">Compétences</Link>
               </li>
               <li>
+                <Link to="/certifications" className="footer-link">Certifications</Link>
+              </li>
+              <li>
                 <Link to="/contact" className="footer-link">Contact</Link>
               </li>
             </ul>
