@@ -63,8 +63,7 @@ function Home() {
               </p>
               <p className="section-description">
                 Spécialisé dans l'Intelligence Artificielle, l'analyse de données et le développement 
-                d'applications innovantes. J'ai travaillé sur des projets d'optimisation industrielle 
-                chez OCP/KOFERT et développé des solutions IoT pour l'agriculture de précision.
+                d'applications innovantes.
               </p>
               <div className="about-highlights">
                 <div className="highlight-item">
@@ -509,47 +508,6 @@ function Home() {
         </div>
       </div>
     </div>
-
-    {/* Statistiques globales */}
-    <div className="skills-stats">
-      <div className="stat-item">
-        <div className="stat-icon">
-          <Code2 size={32} />
-        </div>
-        <div className="stat-content">
-          <span className="stat-number">15+</span>
-          <span className="stat-label">Technologies maîtrisées</span>
-        </div>
-      </div>
-      <div className="stat-item">
-        <div className="stat-icon">
-          <Rocket size={32} />
-        </div>
-        <div className="stat-content">
-          <span className="stat-number">10+</span>
-          <span className="stat-label">Projets réalisés</span>
-        </div>
-      </div>
-      <div className="stat-item">
-        <div className="stat-icon">
-          <Award size={32} />
-        </div>
-        <div className="stat-content">
-          <span className="stat-number">4+</span>
-          <span className="stat-label">Années d'expérience</span>
-        </div>
-      </div>
-      <div className="stat-item">
-        <div className="stat-icon">
-          <TrendingUp size={32} />
-        </div>
-        <div className="stat-content">
-          <span className="stat-number">15%</span>
-          <span className="stat-label">Amélioration OCP</span>
-        </div>
-      </div>
-    </div>
-
     <div className="section-cta">
       <Link to="/skills">
         <Button variant="outline" size="large">
