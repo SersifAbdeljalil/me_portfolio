@@ -100,14 +100,14 @@ export const projectsData = [
     date: "2025 - En cours",
     duration: "4 mois",
     team: "Équipe de 3",
-    github: "https://github.com/SersifAbdeljalil/SmartSign-App",
+    github: "https://github.com/SersifAbdeljalil/smart-glove-sign",
     demo: null,
     featured: true,
     features: [
-      "Capture des mouvements avec 5 capteurs flex + IMU MPU 6050",
-      "Modèle ML entraîné pour reconnaissance de gestes",
-      "Traduction en temps réel en texte",
-      "Application mobile pour visualisation",
+      "Capture des mouvements avec 3 capteurs flex + IMU MPU 6050",
+      "Modèle ML entraîné pour reconnaissance de gestes Random Forest",
+      "Traduction en temps réel en texte, trensformer le texte en parole",
+      "Application web pour visualisation",
       "Interface web pour configuration",
       "Support de multiples signes et expressions"
     ],
@@ -122,8 +122,8 @@ export const projectsData = [
       }
     ],
     results: [
-      "Précision de reconnaissance de 87%",
-      "Temps de réponse < 500ms",
+      "Précision de reconnaissance de 100%",
+      "Temps de réponse < 10ms",
       "Support de 30+ signes différents"
     ]
   },
