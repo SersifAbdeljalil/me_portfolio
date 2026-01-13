@@ -18,7 +18,7 @@ export const projectsData = [
     longDescription: "Développement d'une plateforme en ligne sophistiquée qui utilise l'intelligence artificielle (API Groq) pour analyser automatiquement les CV des utilisateurs. Le système identifie les points forts et faibles, suggère des améliorations de contenu, optimise le format et fournit des recommandations personnalisées pour maximiser les chances de succès professionnel.",
     image: cvAnalyseImage,
     category: "AI",
-    technologies: ["PHP", "Blade", "react js", "CSS", "HTML", "API Groq", "AI"],
+    technologies: ["PHP", "Blade", "react js", "CSS", "API Groq", "AI"],
     date: "2025",
     duration: "3 mois",
     team: "Solo",
