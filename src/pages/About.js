@@ -1,8 +1,8 @@
 // src/components/About/About.js
 import React from 'react';
 import './About.css';
-import cv from "../pages/cv_sersif_abdeljalil.pdf";
-import profilePic from "../pages/Me.jpg";
+import cv from "../../pages/cv_sersif_abdeljalil.pdf";
+import profilePic from "../../pages/Me.jpg";
 
 import { 
   Code2, 
