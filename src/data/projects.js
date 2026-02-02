@@ -9,10 +9,60 @@ import cvAnalyseImage from "../pages/image/CV Analysis Platform.png";
 import profManagementImage from "../pages/image/Teacher Management System.png";
 import ticketMarketplaceImage from "../pages/image/Ticket Marketplace CAN2025.png";
 import LibraryMan from "../pages/image/Library Management Mobile App.png";
+import healthcareImage from "../pages/image/healthcare.png";
 
 export const projectsData = [
   {
     id: 1,
+    title: "Système d'Information Hospitalier",
+    description: "Plateforme complète de gestion hospitalière pour patients, consultations, dossiers médicaux et facturation.",
+    longDescription: "Solution intégrée de gestion hospitalière modernisant l'organisation d'une clinique privée. Le système centralise la gestion des patients, consultations, dossiers médicaux électroniques, rendez-vous et facturation. Avec un contrôle d'accès par rôles (administrateur, médecin, infirmier, patient), la plateforme améliore l'efficacité opérationnelle, l'accès rapide aux informations et assure une traçabilité complète des actions.",
+    image: healthcareImage,
+    category: "Full-Stack",
+    technologies: ["React.js", "Node.js", "Express.js", "JWT"],
+    date: "2025",
+    duration: "5 mois",
+    team: "Équipe de 4",
+    github: "https://github.com/SersifAbdeljalil/hospital_management",
+    demo: null,
+    featured: true,
+    features: [
+      "Gestion complète des patients (CRUD, historique médical, recherche avancée)",
+      "Système de prise de rendez-vous avec planification et suivi d'état",
+      "Enregistrement des consultations (diagnostics, prescriptions, observations)",
+      "Dossier médical électronique centralisé et sécurisé",
+      "Facturation automatique avec suivi des paiements",
+      "Gestion des utilisateurs avec authentification JWT",
+      "Contrôle d'accès basé sur les rôles (RBAC)",
+      "Journalisation et traçabilité de toutes les actions",
+      "Dashboard analytique pour statistiques médicales",
+      "Interface responsive adaptée aux tablettes médicales"
+    ],
+    challenges: [
+      {
+        problem: "Sécurisation des données médicales sensibles et conformité RGPD",
+        solution: "Chiffrement des données sensibles, authentification multi-facteurs, audit trail complet et anonymisation des données pour analytics"
+      },
+      {
+        problem: "Gestion des conflits de rendez-vous et disponibilité des médecins",
+        solution: "Algorithme de détection de conflits en temps réel avec système de réservation optimisée et notifications automatiques"
+      },
+      {
+        problem: "Performance avec volume élevé de dossiers médicaux",
+        solution: "Indexation optimisée MySQL, pagination côté serveur, lazy loading des images médicales et cache Redis pour données fréquentes"
+      }
+    ],
+    results: [
+      "Réduction de 60% du temps de consultation des dossiers",
+      "Amélioration de 45% de l'efficacité administrative",
+      "Zéro conflit de rendez-vous depuis le déploiement",
+      "Taux de satisfaction des médecins de 92%",
+      "Temps de facturation réduit de 70%"
+    ]
+  },
+
+  {
+    id: 2,
     title: "Plateforme d'Analyse de CV Intelligente",
     description: "Application web pour analyser les CV et fournir des recommandations d'amélioration basées sur l'IA avec l'API Groq.",
     longDescription: "Développement d'une plateforme en ligne sophistiquée qui utilise l'intelligence artificielle (API Groq) pour analyser automatiquement les CV des utilisateurs. Le système identifie les points forts et faibles, suggère des améliorations de contenu, optimise le format et fournit des recommandations personnalisées pour maximiser les chances de succès professionnel.",
@@ -51,7 +101,7 @@ export const projectsData = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Trading Crypto avec RL - PPO Algorithm",
     description: "Application d'algorithmes de Reinforcement Learning (PPO) pour optimiser les décisions de trading sur Ethereum.",
     longDescription: "Projet de recherche avancé utilisant le Proximal Policy Optimization (PPO) pour développer un agent de trading automatisé sur les données Ethereum. L'objectif est de surpasser la stratégie passive 'buy-and-hold' en prenant des décisions intelligentes d'achat et de vente basées sur l'apprentissage par renforcement.",
@@ -90,7 +140,7 @@ export const projectsData = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "SmartSign - Traduction Langage des Signes",
     description: "Système embarqué utilisant des capteurs flex et IMU pour traduire le langage des signes en texte en temps réel.",
     longDescription: "Application mobile et web intégrant un modèle de Machine Learning pour reconnaître les gestes du langage des signes et les convertir en texte. Le système utilise 5 capteurs flex et un IMU (MPU 6050) pour capturer les mouvements des mains avec précision, permettant aux personnes sourdes et muettes de communiquer plus facilement.",
@@ -129,7 +179,7 @@ export const projectsData = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Optimisation Production Acide Sulfurique - APC",
     description: "Système APC (Advanced Process Control) avec IA pour optimiser la production d'acide sulfurique chez OCP/KOFERT.",
     longDescription: "Projet industriel majeur utilisant des techniques d'Advanced Process Control et d'Intelligence Artificielle pour optimiser le processus de production d'acide sulfurique. Le système analyse en temps réel les paramètres de production, modélise l'unité HRS et implémente des stratégies de contrôle avancées pour maximiser l'efficacité et réduire les coûts.",
@@ -169,7 +219,7 @@ export const projectsData = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Scopus Chatbot Scientifique",
     description: "Chatbot intelligent utilisant NLP pour interroger la base de données arXiv et fournir des informations sur les publications scientifiques.",
     longDescription: "Agent conversationnel avancé permettant aux chercheurs d'interroger facilement la base de données arXiv en langage naturel. Le système utilise des techniques de NLP, d'indexation sémantique et de gestion de données pour fournir des réponses précises et pertinentes sur les publications scientifiques, les auteurs et les données académiques.",
@@ -208,7 +258,7 @@ export const projectsData = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "Gestion des Professeurs",
     description: "Application web React pour la gestion administrative des professeurs avec import Excel et génération de cartes professionnelles.",
     longDescription: "Système complet de gestion des professeurs permettant à l'administration d'ajouter des enseignants manuellement ou via fichiers Excel. Les professeurs peuvent se connecter, consulter leurs informations personnelles, télécharger leur carte professionnelle et gérer leur profil.",
@@ -247,7 +297,7 @@ export const projectsData = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "API Gestion Bibliothèque - Prêt de Livres",
     description: "Application mobile React Native et API REST pour la gestion d'une bibliothèque avec système de prêt et retour de livres.",
     longDescription: "Solution complète de gestion de bibliothèque comprenant une application mobile React Native pour les utilisateurs et une API REST Node.js/Express. Les utilisateurs peuvent consulter le catalogue, emprunter et retourner des livres, tandis que les administrateurs gèrent l'inventaire et les membres.",
@@ -287,7 +337,7 @@ export const projectsData = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "Marketplace Revente Tickets CAN2025",
     description: "Plateforme de revente de tickets pour la Coupe d'Afrique des Nations 2025 avec authentification Google.",
     longDescription: "Application web complète pour la gestion et la revente de tickets de la CAN2025. Le système comprend une interface utilisateur React, un backend Express, une authentification Google OAuth et un panel administrateur pour la gestion des transactions et la modération.",
@@ -327,7 +377,7 @@ export const projectsData = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "Gestion Emploi du Temps & Réservation Salles",
     description: "Système de gestion des emplois du temps pour professeurs et étudiants avec réservation de salles.",
     longDescription: "Plateforme web permettant aux professeurs de consulter leurs emplois du temps, informations de cours et données étudiants. Les administrateurs peuvent gérer l'ensemble du système, créer les plannings, et gérer les réservations de salles. Système complet pour l'organisation académique.",
