@@ -6,15 +6,15 @@ import './Skills.css';
 import SkillCategory from '../components/SkillCategory/SkillCategory';
 
 // Import des données
-import { skillsData, totalSkills, categories } from '../data/skills';
+import { skillsData, categories } from '../data/skills';
 
 // Import des icônes
 import { 
   Award, 
   TrendingUp,
-  Target,
+  
   Zap,
-  CheckCircle2,
+  
   Search,
   X
 } from 'lucide-react';
@@ -39,8 +39,6 @@ function Skills() {
       totalProjects
     };
   };
-
-  const stats = calculateGlobalStats();
 
   // Filtrer les compétences
   useEffect(() => {
