@@ -33,7 +33,7 @@ export const skillsData = [
         level: 5,
         percentage: 95,
         experience: "3 ans",
-        projects: 8,
+        projects: 5,
         description: "Développement d'applications web complexes avec hooks, context API et Redux",
         color: "#61DAFB"
       },
@@ -43,7 +43,7 @@ export const skillsData = [
         level: 4,
         percentage: 85,
         experience: "2 ans",
-        projects: 5,
+        projects:1,
         description: "Applications SSR/SSG avec routing avancé et optimisation des performances",
         color: "#000000"
       },
@@ -53,7 +53,7 @@ export const skillsData = [
         level: 4,
         percentage: 80,
         experience: "2 ans",
-        projects: 4,
+        projects: 1,
         description: "Applications d'entreprise avec TypeScript, RxJS et Angular Material",
         color: "#DD0031"
       },
@@ -63,7 +63,7 @@ export const skillsData = [
         level: 5,
         percentage: 98,
         experience: "4 ans",
-        projects: 15,
+        projects: 2,
         description: "Maîtrise complète du HTML5 sémantique et CSS3 avec animations",
         color: "#E34F26"
       },
@@ -73,7 +73,7 @@ export const skillsData = [
         level: 5,
         percentage: 95,
         experience: "4 ans",
-        projects: 20,
+        projects: 10,
         description: "ES6+, async/await, promises, manipulation DOM, événements",
         color: "#F7DF1E"
       },
@@ -83,7 +83,7 @@ export const skillsData = [
         level: 5,
         percentage: 90,
         experience: "2 ans",
-        projects: 10,
+        projects: 1,
         description: "Utility-first CSS pour des designs responsives et personnalisés",
         color: "#06B6D4"
       }
@@ -102,7 +102,7 @@ export const skillsData = [
         level: 5,
         percentage: 92,
         experience: "3 ans",
-        projects: 12,
+        projects: 10,
         description: "Création d'APIs REST/GraphQL, microservices et applications temps réel",
         color: "#339933"
       },
@@ -112,7 +112,7 @@ export const skillsData = [
         level: 5,
         percentage: 95,
         experience: "3 ans",
-        projects: 15,
+        projects: 10,
         description: "Framework minimaliste pour APIs REST avec middleware personnalisés",
         color: "#000000"
       },
@@ -132,7 +132,7 @@ export const skillsData = [
         level: 5,
         percentage: 95,
         experience: "4 ans",
-        projects: 18,
+        projects: 5,
         description: "Scripts automation, APIs Flask/FastAPI et traitement de données",
         color: "#3776AB"
       },
@@ -161,7 +161,7 @@ export const skillsData = [
         level: 4,
         percentage: 88,
         experience: "2 ans",
-        projects: 6,
+        projects: 3,
         description: "Applications iOS/Android avec navigation, state management et API",
         color: "#61DAFB"
       },
@@ -171,7 +171,7 @@ export const skillsData = [
         level: 4,
         percentage: 85,
         experience: "2 ans",
-        projects: 5,
+        projects: 3,
         description: "Développement rapide avec Expo CLI, OTA updates et modules natifs",
         color: "#000020"
       }
@@ -200,7 +200,7 @@ export const skillsData = [
         level: 4,
         percentage: 85,
         experience: "2 ans",
-        projects: 8,
+        projects: 1,
         description: "Bases NoSQL, agrégation, schémas dynamiques et réplication",
         color: "#47A248"
       },
@@ -210,7 +210,7 @@ export const skillsData = [
         level: 3,
         percentage: 70,
         experience: "1 an",
-        projects: 3,
+        projects: 2,
         description: "PL/SQL, procédures stockées et gestion de grandes bases de données",
         color: "#F80000"
       },
@@ -239,7 +239,7 @@ export const skillsData = [
         level: 4,
         percentage: 82,
         experience: "2 ans",
-        projects: 6,
+        projects: 10,
         description: "Réseaux de neurones, CNN, RNN pour vision et traitement du langage",
         color: "#FF6F00"
       },
@@ -247,7 +247,7 @@ export const skillsData = [
         name: "PyTorch",
         icon: <Brain size={28} />,
         level: 4,
-        percentage: 80,
+        percentage: 10,
         experience: "2 ans",
         projects: 5,
         description: "Deep Learning research, modèles personnalisés et fine-tuning",
@@ -259,7 +259,7 @@ export const skillsData = [
         level: 4,
         percentage: 85,
         experience: "2 ans",
-        projects: 7,
+        projects: 10,
         description: "API haut niveau pour prototypage rapide de modèles neuronaux",
         color: "#D00000"
       },
@@ -319,7 +319,7 @@ export const skillsData = [
         level: 4,
         percentage: 88,
         experience: "2 ans",
-        projects: 4,
+        projects: 1,
         description: "Gradient boosting pour prédictions et optimisation industrielle",
         color: "#337AB7"
       }
