@@ -202,19 +202,7 @@
 }
 
 /* Point super lumineux */
-.badge-dot {
-  width: 14px;
-  height: 14px;
-  background-color: #fff;
-  border-radius: 50%;
-  animation: megaBlink 1.2s ease-in-out infinite;
-  box-shadow: 
-    0 0 15px rgba(255, 255, 255, 1),
-    0 0 25px rgba(255, 255, 255, 0.8),
-    0 0 35px rgba(255, 255, 255, 0.6);
-  position: relative;
-  z-index: 2;
-}
+
 
 /* Cercles concentriques autour du point */
 .badge-dot::before,

@@ -13,10 +13,7 @@ function Hero() {
         
         {/* Contenu texte */}
         <div className="hero-content">
-          <div className="hero-badge">
-            <span className="badge-dot"></span>
-            🎓 Recherche Stage PFE Master - Disponible Immédiatement
-          </div>
+
           
           <h1 className="hero-title">
             Bonjour, je suis
