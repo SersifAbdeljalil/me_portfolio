@@ -34,9 +34,6 @@ function Footer() {
                 <Link to="/projects" className="footer-link">Projets</Link>
               </li>
               <li>
-                <Link to="/skills" className="footer-link">Compétences</Link>
-              </li>
-              <li>
                 <Link to="/certifications" className="footer-link">Certifications</Link>
               </li>
               <li>

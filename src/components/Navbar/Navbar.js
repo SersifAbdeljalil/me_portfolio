@@ -73,14 +73,6 @@ function Navbar() {
           </li>
           <li className="navbar-item">
             <Link 
-              to="/skills" 
-              className={`navbar-link ${isActive('/skills') ? 'active' : ''}`}
-            >
-              Compétences
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link 
               to="/certifications" 
               className={`navbar-link ${isActive('/certifications') ? 'active' : ''}`}
             >

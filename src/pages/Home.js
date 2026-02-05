@@ -509,12 +509,6 @@ function Home() {
       </div>
     </div>
     <div className="section-cta">
-      <Link to="/skills">
-        <Button variant="outline" size="large">
-          Voir le portfolio complet
-          <ArrowRight size={18} />
-        </Button>
-      </Link>
     </div>
   </div>
 </section>
